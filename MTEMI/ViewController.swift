@@ -1,9 +1,5 @@
-
-
-
-
 import UIKit
-import RxSwift 
+import RxSwift
 import RxCocoa
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -39,11 +35,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         // Configure the cell
         let earthquake = earthquakes[indexPath.row]
-        let cellLabel = UILabel(frame: CGRect(x: 10, y: 10, width: view.frame.width - 20, height: 20))
-        cellLabel.text = "Magnitude: \(earthquake.magnitude)"
-        cell.contentView.addSubview(cellLabel)
         
-        // Add more labels or views as needed for cell content
+        // Configure magnitude label
+        let magnitudeLabel = UILabel(frame: CGRect(x: 10, y: 10, width: view.frame.width - 20, height: 20))
+        magnitudeLabel.text = "Magnitude: \(earthquake.magnitude)"
+        cell.contentView.addSubview(magnitudeLabel)
+        
+        // Configure place label
+        let placeLabel = UILabel(frame: CGRect(x: 10, y: 35, width: view.frame.width - 20, height: 20))
+        placeLabel.text = "Place: \(earthquake.place)"
+        cell.contentView.addSubview(placeLabel)
         
         return cell
     }
@@ -60,5 +61,5 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 print("Failed to fetch data:", error)
             }
         }
-    } 
+    }
 }
