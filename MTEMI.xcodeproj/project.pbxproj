@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65547BF62C2AE41B009FCB60 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65547BF52C2AE41B009FCB60 /* MapViewController.swift */; };
 		65AFBF202C1C54EC0006CA44 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 65AFBF1F2C1C54EC0006CA44 /* RxBlocking */; };
 		65AFBF222C1C54EC0006CA44 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 65AFBF212C1C54EC0006CA44 /* RxCocoa */; };
 		65AFBF242C1C54EC0006CA44 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 65AFBF232C1C54EC0006CA44 /* RxRelay */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		65547BF52C2AE41B009FCB60 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B135EE712C1C37500030BF25 /* MTEMI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MTEMI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B135EE742C1C37500030BF25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B135EE762C1C37500030BF25 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				B135EE742C1C37500030BF25 /* AppDelegate.swift */,
 				B135EE762C1C37500030BF25 /* SceneDelegate.swift */,
 				B135EE782C1C37500030BF25 /* ViewController.swift */,
+				65547BF52C2AE41B009FCB60 /* MapViewController.swift */,
 				B135EE7D2C1C37510030BF25 /* Assets.xcassets */,
 				B135EE7F2C1C37510030BF25 /* LaunchScreen.storyboard */,
 				B135EE822C1C37510030BF25 /* Info.plist */,
@@ -283,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B135EE792C1C37500030BF25 /* ViewController.swift in Sources */,
+				65547BF62C2AE41B009FCB60 /* MapViewController.swift in Sources */,
 				B135EE752C1C37500030BF25 /* AppDelegate.swift in Sources */,
 				B135EEB32C1C3F240030BF25 /* NetworkManager.swift in Sources */,
 				B135EEAE2C1C3E100030BF25 /* Earthquake.swift in Sources */,
