@@ -1,10 +1,13 @@
 import UIKit
+import RxSwift
 import CoreLocation
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     var tableView: UITableView!
     var earthquakes: [Earthquake] = []
+    
+    let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,18 +80,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     func fetchData() {
-            NetworkManager.shared.fetchEarthquakeData { [weak self] result in
-                switch result {
-                case .success(let earthquakes):
-                    self?.earthquakes = earthquakes
-                    DispatchQueue.main.async {
-                        self?.tableView.reloadData()
-                    }
-                case .failure(let error):
-                    print("Failed to fetch earthquake data:", error)
-                    // Handle error presentation if needed
+        NetworkManager.shared.fetchEarthquakes()
+            .subscribe(onNext: { [weak self] earthquakes in
+                self?.earthquakes = earthquakes
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
                 }
-            }
+            }, onError: { error in
+                print("Failed to fetch earthquake data:", error)
+                // Handle error presentation if needed
+            })
+            .disposed(by: disposeBag)
+    }
+
         }
 
-}
+
